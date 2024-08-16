@@ -1,0 +1,71 @@
+timestamp,provider,model,user_prompt,elapsed_time,total_messages,estimated_prompt_tokens,estimated_response_tokens,estimated_total_tokens
+2024-08-15 11:14:56.935807,Groq,llama3-70b-8192,find the top 5 albums by sales revenue,1.7731428146362305,13,8,110,118
+2024-08-15 11:15:38.777534,Groq,llama3-70b-8192,"SELECT 
+    Album.Title, 
+    SUM(InvoiceLine.UnitPrice * InvoiceLine.Quantity) AS TotalRevenue
+FROM 
+    Album
+JOIN 
+    Track ON Album.AlbumId = Track.AlbumId
+JOIN 
+    InvoiceLine ON Track.TrackId = InvoiceLine.TrackId
+GROUP BY 
+    Album.Title
+ORDER BY 
+    TotalRevenue DESC
+LIMIT 5;",0.826301097869873,15,17,110,127
+2024-08-15 11:16:16.287617,Groq,llama3-70b-8192,"[
+  {
+    ""Title"": ""Battlestar Galactica (Classic), Season 1"",
+    ""TotalRevenue"": 35.82
+  },
+  {
+    ""Title"": ""The Office, Season 3"",
+    ""TotalRevenue"": 31.84
+  },
+  {
+    ""Title"": ""Minha Historia"",
+    ""TotalRevenue"": 26.73
+  },
+  {
+    ""Title"": ""Lost, Season 2"",
+    ""TotalRevenue"": 25.87
+  },
+  {
+    ""Title"": ""Heroes, Season 1"",
+    ""TotalRevenue"": 25.87
+  }
+]",1.3542041778564453,17,90,110,200
+2024-08-15 11:29:03.165899,Cohere,command-r-plus,whats the name of the artist with the single longest track in duration. include the name of the album in the reply as well,4.005817413330078,19,27,110,137
+2024-08-15 14:20:10.357573,Groq,llama3-70b-8192,find the top5 artists and the respective album titles with the single track of the shortest duration,2.0229341983795166,13,17,110,127
+2024-08-15 14:44:36.466607,Groq,llama3-70b-8192,use this schema to give an example of a sql cte query,1.5457229614257812,15,12,109,121
+2024-08-15 15:25:17.698951,Groq,llama3-70b-8192,suggest 3 sql queries that use JOIN to run on this database,2.327517032623291,13,12,148,160
+2024-08-15 15:42:37.677455,Groq,gemma2-9b-it,which track has sold the most,22.13733172416687,13,6,26,32
+2024-08-15 15:46:28.639979,Groq,gemma2-9b-it,which artist has sold the least by tracks sold,22.113994359970093,15,9,38,47
+2024-08-15 15:48:01.531144,Groq,gemma2-9b-it,list the 5 artist who have sold the least tracks,0.9352912902832031,17,10,38,48
+2024-08-16 10:23:42.464234,Groq,mixtral-8x7b-32768,describe the given schema,2.0028223991394043,13,4,300,304
+2024-08-16 10:24:09.827325,Groq,mixtral-8x7b-32768,how many artists in total,0.9491784572601318,15,5,40,45
+2024-08-16 10:25:55.513062,Groq,mixtral-8x7b-32768,which artist has the shortest single track in duration,0.9225685596466064,17,9,93,102
+2024-08-16 10:27:16.457951,Groq,mixtral-8x7b-32768,update the query to return also the album name and the track name,1.1160776615142822,19,13,121,134
+2024-08-16 10:28:13.118150,Groq,mixtral-8x7b-32768,"[
+  {
+    ""ArtistName"": ""Skank"",
+    ""AlbumName"": ""O Samba Pocon\u00e9"",
+    ""TrackName"": ""\u00c9 Uma Partida De Futebol"",
+    ""ShortestTrackDuration"": 1071
+  }
+]",0.9698183536529541,21,18,106,124
+2024-08-16 10:31:36.061532,Groq,mixtral-8x7b-32768,which track has sold the most by sales revenue,1.047670602798462,23,9,111,120
+2024-08-16 10:33:27.041398,Groq,mixtral-8x7b-32768,which artist has sold the least by tracks sold,1.1239287853240967,25,9,119,128
+2024-08-16 10:34:58.404076,Groq,mixtral-8x7b-32768,"list the 5 artist who have sold the least tracks, include the track and album names",1.359769582748413,27,16,140,156
+2024-08-16 12:17:52.023059,Groq,llama3-70b-8192,"list the 5 artist who have sold the least tracks, include the track and album names",2.1697311401367188,13,16,121,137
+2024-08-16 12:19:16.982865,Groq,llama3-70b-8192,find the top5 artists and the respective album titles with the single track of the shortest duration,1.7068829536437988,15,17,117,134
+2024-08-16 12:20:32.812763,Groq,llama3-70b-8192,"[
+  {
+    ""ArtistName"": ""Skank"",
+    ""AlbumTitle"": ""O Samba Pocon\u00e9"",
+    ""TrackName"": ""\u00c9 Uma Partida De Futebol"",
+    ""Milliseconds"": 1071
+  }
+]",0.9319958686828613,17,18,60,78
+2024-08-16 12:21:59.385111,Groq,llama3-70b-8192,"find the top 5 artists who have have the 5 shortest tracks in duration. include the names for artist, track, album and the respective durations",1.697746992111206,19,25,124,149
